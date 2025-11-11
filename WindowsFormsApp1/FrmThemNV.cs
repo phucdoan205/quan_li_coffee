@@ -30,11 +30,41 @@ namespace WindowsFormsApp1
             string pass = txtPass.Text.Trim();
             DateTime ngay = dateTimePicker1.Value;
 
-            if (ten == "" || sdt == "")
+            if (ten == "" || sdt == ""||user==""||pass=="")
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
+            // KIỂM TRA TÊN NHÂN VIÊN TRÙNG
+            string queryCheck = "SELECT COUNT(*) FROM NhanVien WHERE HoTen = @ten";
+            SqlCommand cmdCheck = new SqlCommand(queryCheck, conn);
+            cmdCheck.Parameters.AddWithValue("@ten", txtbTaiKhoan.Text.Trim());
+
+            conn.Open();
+            int count = (int)cmdCheck.ExecuteScalar();
+            conn.Close();
+
+            if (count > 0)
+            {
+                MessageBox.Show("Tên nhân viên đã tồn tại! Vui lòng nhập tên khác.",
+                                "Trùng tên", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+            string queryUser = "SELECT COUNT(*) FROM NhanVien WHERE Username = @user";
+            SqlCommand cmdUser = new SqlCommand(queryUser, conn);
+            cmdUser.Parameters.AddWithValue("@user", txtUser.Text.Trim());
+
+            conn.Open();
+            int existUser = (int)cmdUser.ExecuteScalar();
+            conn.Close();
+
+            if (existUser > 0)
+            {
+                MessageBox.Show("Username đã tồn tại! Vui lòng chọn username khác.",
+                                "Trùng Username", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
 
             string query = "INSERT INTO NhanVien (HoTen, SDT, NgayVaoLam, TinhTrang, Username, Password) VALUES(@ten, @sdt, @ngay, N'Đang làm',@user,@pass)";
 
@@ -54,7 +84,7 @@ namespace WindowsFormsApp1
             formCha.LoadData();  // refresh list
 
             // Xóa để nhập tiếp
-            txtbMatKhau.Clear();
+            txtbTaiKhoan.Clear();
             txtbMatKhau.Clear();
             txtUser.Clear();
             txtPass.Clear();
