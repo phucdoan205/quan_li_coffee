@@ -33,6 +33,7 @@
             this.txtbTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtbMatKhau = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // lblTaikhoan
@@ -99,6 +100,20 @@
             this.btnDangNhap.UseVisualStyleBackColor = false;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
             // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.SystemColors.Control;
+            this.label1.Location = new System.Drawing.Point(237, 51);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 32);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "Đăng Nhập";
+            // 
             // FrmADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -106,6 +121,7 @@
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.pngtree_background_green_abstrack_picture_image_1294091;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(630, 363);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtbMatKhau);
             this.Controls.Add(this.txtbTaiKhoan);
@@ -126,5 +142,6 @@
         private System.Windows.Forms.TextBox txtbTaiKhoan;
         private System.Windows.Forms.TextBox txtbMatKhau;
         private System.Windows.Forms.Button btnDangNhap;
+        private System.Windows.Forms.Label label1;
     }
 }
