@@ -13,7 +13,7 @@ namespace WindowsFormsApp1
 {
     public partial class FrmNhanVien : Form
     {
-        SqlConnection conn = new SqlConnection (@"Data Source=DESKTOP-60ETTE4\SQLEXPRESS;Initial Catalog=QL_Cafe;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection conn = new SqlConnection (@"Data Source=NGOCHONG\SQLEXPRESS;Initial Catalog=QL_Cafe;Integrated Security=True;TrustServerCertificate=True");
         public FrmNhanVien()
         {
             InitializeComponent();
@@ -61,7 +61,6 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Vui lòng chọn nhân viên cần xóa!");
                 return;
             }
-
             int id = Convert.ToInt32(dgvNhanVien.CurrentRow.Cells["MaNV"].Value);
 
             if (MessageBox.Show("Bạn có chắc muốn xóa nhân viên này?",
