@@ -150,7 +150,7 @@ namespace WindowsFormsApp1
 
             conn.Open();
 
-            // ✅ 1) Lưu hóa đơn trước
+            //Lưu hóa đơn trước
             SqlCommand cmdHD = new SqlCommand(
                 "INSERT INTO HoaDon (MaNV,NgayLapHD, Tong) OUTPUT INSERTED.MaHD " +
                 "VALUES (@manv,GETDATE(), @tong)", conn);
@@ -160,7 +160,7 @@ namespace WindowsFormsApp1
 
             int maHD = (int)cmdHD.ExecuteScalar();
 
-            // ✅ 2) Lưu chi tiết hóa đơn (không lưu thành tiền)
+            // Lưu chi tiết hóa đơn (không lưu thành tiền)
             foreach (DataGridViewRow row in dgvorder.Rows)
             {
                 string ten = row.Cells["TenSP"].Value.ToString();
@@ -179,7 +179,7 @@ namespace WindowsFormsApp1
 
             conn.Close();
 
-            // ✅ 3) Reset order sau khi lưu
+            // Reset order sau khi lưu
             dgvorder.Rows.Clear();
             TinhTongTien();
 
