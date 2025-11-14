@@ -15,7 +15,7 @@ namespace WindowsFormsApp1
 {
     public partial class Form1 : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-60ETTE4\SQLEXPRESS;Initial Catalog=QL_Cafe;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=NGOCHONG\SQLEXPRESS;Initial Catalog=QL_Cafe;Integrated Security=True;TrustServerCertificate=True");
         Dictionary<string, int> DonGiaGoc = new Dictionary<string, int>();
 
         public Form1()
@@ -66,7 +66,7 @@ namespace WindowsFormsApp1
                 Location = new Point(5, 5)
             };
 
-            string path = @"D:\c#\vs tím\cuối kì windowform\WindowsFormsApp1\Resources\" + anh;
+            string path = @"C:\Users\NgocHong\quan_li_coffee\WindowsFormsApp1\Resources\" + anh;
             if (File.Exists(path))
                 pic.Image = Image.FromFile(path);
             else

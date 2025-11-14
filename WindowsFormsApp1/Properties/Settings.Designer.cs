@@ -26,8 +26,8 @@ namespace WindowsFormsApp1.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-60ETTE4\\SQLEXPRESS;Initial Catalog=QL_Cafe;Integrated Securit" +
-            "y=True;TrustServerCertificate=True")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=NGOCHONG\\SQLEXPRESS;Initial Catalog=QL_Cafe;Integrated Security=True;" +
+            "TrustServerCertificate=True")]
         public string Setting {
             get {
                 return ((string)(this["Setting"]));
