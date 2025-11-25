@@ -67,5 +67,27 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Sai tài khoản hoặc mật khẩu");
             }
         }
+
+        private void FrmADMIN_Load(object sender, EventArgs e)
+        {
+            txtbMatKhau.UseSystemPasswordChar = true;   // Ẩn mật khẩu mặc định
+            btnShowHide.Text = "Hiện";
+        }
+
+        private void btnShowHide_Click(object sender, EventArgs e)
+        {
+            if (txtbMatKhau.UseSystemPasswordChar == true)
+            {
+                // Đang ẩn → chuyển sang hiện
+                txtbMatKhau.UseSystemPasswordChar = false;
+                btnShowHide.Text = "Ẩn";  // đổi chữ nút
+            }
+            else
+            {
+                // Đang hiện → chuyển sang ẩn
+                txtbMatKhau.UseSystemPasswordChar = true;
+                btnShowHide.Text = "Hiện"; // đổi chữ nút
+            }
+        }
     }
 }
