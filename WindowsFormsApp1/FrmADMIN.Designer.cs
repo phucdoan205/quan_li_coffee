@@ -34,6 +34,7 @@
             this.txtbMatKhau = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnhienan = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblTaikhoan
@@ -114,6 +115,17 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Đăng Nhập";
             // 
+            // btnhienan
+            // 
+            this.btnhienan.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnhienan.Location = new System.Drawing.Point(538, 198);
+            this.btnhienan.Name = "btnhienan";
+            this.btnhienan.Size = new System.Drawing.Size(69, 37);
+            this.btnhienan.TabIndex = 6;
+            this.btnhienan.Text = "Hiện";
+            this.btnhienan.UseVisualStyleBackColor = true;
+            this.btnhienan.Click += new System.EventHandler(this.btnhienan_Click);
+            // 
             // FrmADMIN
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
@@ -121,6 +133,7 @@
             this.BackgroundImage = global::WindowsFormsApp1.Properties.Resources.pngtree_background_green_abstrack_picture_image_1294091;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(630, 363);
+            this.Controls.Add(this.btnhienan);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtbMatKhau);
@@ -130,6 +143,7 @@
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FrmADMIN";
             this.Text = "FrmADMIN";
+            this.Load += new System.EventHandler(this.FrmADMIN_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -143,5 +157,6 @@
         private System.Windows.Forms.TextBox txtbMatKhau;
         private System.Windows.Forms.Button btnDangNhap;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnhienan;
     }
 }
