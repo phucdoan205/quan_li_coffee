@@ -62,7 +62,7 @@
             this.flowMenu1.AutoScroll = true;
             this.flowMenu1.Location = new System.Drawing.Point(564, 44);
             this.flowMenu1.Name = "flowMenu1";
-            this.flowMenu1.Size = new System.Drawing.Size(611, 418);
+            this.flowMenu1.Size = new System.Drawing.Size(545, 418);
             this.flowMenu1.TabIndex = 0;
             // 
             // label2
@@ -150,6 +150,8 @@
             // 
             // dgvorder
             // 
+            this.dgvorder.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.dgvorder.BackgroundColor = System.Drawing.Color.White;
             this.dgvorder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvorder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

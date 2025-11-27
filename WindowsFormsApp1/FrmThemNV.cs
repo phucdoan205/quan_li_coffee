@@ -14,7 +14,7 @@ namespace WindowsFormsApp1
 {
     public partial class FrmThemNV : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=DESKTOP-60ETTE4\SQLEXPRESS;Initial Catalog=QL_Cafe;Integrated Security=True;TrustServerCertificate=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=NGOCHONG\SQLEXPRESS;Initial Catalog=QL_Cafe;Integrated Security=True;TrustServerCertificate=True");
         private FrmNhanVien formCha;
         public FrmThemNV(FrmNhanVien parent)
         {
