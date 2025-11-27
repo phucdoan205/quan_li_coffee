@@ -109,7 +109,7 @@ namespace WindowsFormsApp1
                         da.Fill(dtHD);
                     }
 
-                    string queryCT = @"SELECT TenSP, SoLuong, GiaSP, (SoLuong * GiaSP) AS ThanhTien 
+                    string queryCT = @"SELECT MaHD, TenSP, SoLuong, GiaSP, (SoLuong * GiaSP) AS ThanhTien 
                                FROM CTHD WHERE MaHD IN (SELECT MaHD FROM HoaDon WHERE CONVERT(date, NgayLapHD) = @ngay)";
                     using (SqlDataAdapter da = new SqlDataAdapter(queryCT, con))
                     {
@@ -199,9 +199,10 @@ namespace WindowsFormsApp1
                     document.Add(new Paragraph("\n2. CHI TIẾT SẢN PHẨM ĐÃ BÁN")
                         .SetFont(fontBold).SetFontSize(14).SetMarginTop(20));
 
-                    Table tableSP = new Table(4).UseAllAvailableWidth();
+                    Table tableSP = new Table(5).UseAllAvailableWidth();
                     tableSP.SetFont(fontNormal).SetFontSize(11);
 
+                    tableSP.AddHeaderCell(new Cell().Add(new Paragraph("Mã HD").SetFont(fontBold)));
                     tableSP.AddHeaderCell(new Cell().Add(new Paragraph("Tên SP").SetFont(fontBold)));
                     tableSP.AddHeaderCell(new Cell().Add(new Paragraph("SL").SetFont(fontBold)));
                     tableSP.AddHeaderCell(new Cell().Add(new Paragraph("Giá").SetFont(fontBold)));
@@ -209,6 +210,7 @@ namespace WindowsFormsApp1
 
                     foreach (DataRow row in dtCT.Rows)
                     {
+                        tableSP.AddCell(row["MaHD"].ToString());
                         tableSP.AddCell(row["TenSP"].ToString());
                         tableSP.AddCell(row["SoLuong"].ToString());
                         tableSP.AddCell(decimal.Parse(row["GiaSP"].ToString()).ToString("N0") + " đ");
