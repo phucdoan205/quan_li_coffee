@@ -39,6 +39,7 @@
             this.dgvHD = new System.Windows.Forms.DataGridView();
             this.dgvCTHD = new System.Windows.Forms.DataGridView();
             this.label3 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHD)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCTHD)).BeginInit();
             this.SuspendLayout();
@@ -67,7 +68,7 @@
             // 
             this.btnThem.BackColor = System.Drawing.Color.White;
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThem.Location = new System.Drawing.Point(1094, 55);
+            this.btnThem.Location = new System.Drawing.Point(1094, 48);
             this.btnThem.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(249, 42);
@@ -173,12 +174,26 @@
             this.label3.Size = new System.Drawing.Size(342, 91);
             this.label3.TabIndex = 3;
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.White;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(1094, 92);
+            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(249, 42);
+            this.button1.TabIndex = 21;
+            this.button1.Text = "Xuất báo cáo";
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FrmDoanhThu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSeaGreen;
             this.ClientSize = new System.Drawing.Size(1383, 692);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.dgvCTHD);
             this.Controls.Add(this.dgvHD);
             this.Controls.Add(this.label8);
@@ -213,5 +228,6 @@
         private System.Windows.Forms.DataGridView dgvHD;
         private System.Windows.Forms.DataGridView dgvCTHD;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button button1;
     }
 }
