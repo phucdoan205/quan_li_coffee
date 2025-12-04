@@ -45,7 +45,7 @@ namespace WindowsFormsApp1
                 int maNV = dr.GetInt32(0);
                 string tenNV = dr.GetString(1);
 
-                // ✅ Lưu thông tin nhân viên đăng nhập vào biến toàn cục
+                //Lưu thông tin nhân viên đăng nhập vào biến toàn cục
                 Program.MaNV_DangNhap = maNV;
                 Program.TenNV_DangNhap = tenNV;
 

@@ -35,6 +35,15 @@ namespace WindowsFormsApp1
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!");
                 return;
             }
+
+            // KIỂM TRA SỐ ĐIỆN THOẠI PHẢI LÀ 10 SỐ
+            if (sdt.Length != 10 || !sdt.All(char.IsDigit))
+            {
+                MessageBox.Show("Số điện thoại phải gồm đúng 10 chữ số!",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtbMatKhau.Focus();
+                return;
+            }
             // KIỂM TRA TÊN NHÂN VIÊN TRÙNG
             string queryCheck = "SELECT COUNT(*) FROM NhanVien WHERE HoTen = @ten";
             SqlCommand cmdCheck = new SqlCommand(queryCheck, conn);

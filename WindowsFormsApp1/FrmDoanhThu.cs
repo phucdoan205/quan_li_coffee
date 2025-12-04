@@ -150,12 +150,12 @@ namespace WindowsFormsApp1
                     Document document = new Document(pdf, PageSize.A4);
                     document.SetMargins(40, 40, 40, 40);
 
-                    // FONT AN TOÀN 100% – KHÔNG BAO GIỜ GÂY LỖI
+                    // FONT AN TOÀN
                     PdfFont fontNormal = PdfFontFactory.CreateFont(StandardFonts.HELVETICA);
                     PdfFont fontBold = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_BOLD);
                     PdfFont fontItalic = PdfFontFactory.CreateFont(StandardFonts.HELVETICA_OBLIQUE);
 
-                    // Thử dùng Arial thật (nếu có) → đẹp hơn
+                    // dùng Arial thật (nếu có)
                     try
                     {
                         string arial = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Fonts), "arial.ttf");
@@ -166,7 +166,7 @@ namespace WindowsFormsApp1
                         if (File.Exists(arialBold)) fontBold = PdfFontFactory.CreateFont(arialBold, PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
                         if (File.Exists(arialItal)) fontItalic = PdfFontFactory.CreateFont(arialItal, PdfEncodings.IDENTITY_H, PdfFontFactory.EmbeddingStrategy.PREFER_EMBEDDED);
                     }
-                    catch { /* Không sao cả, vẫn dùng font mặc định */ }
+                    catch { /* dùng font mặc định */ }
 
                     // NỘI DUNG PDF
                     document.Add(new Paragraph("BÁO CÁO DOANH THU QUÁN CAFE")

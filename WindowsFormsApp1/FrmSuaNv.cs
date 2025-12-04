@@ -38,6 +38,14 @@ namespace WindowsFormsApp1
             string sdt = txtbMatKhau.Text.Trim();
             DateTime ngay = dateTimePicker1.Value;
 
+            if (sdt.Length != 10 || !sdt.All(char.IsDigit))
+            {
+                MessageBox.Show("Số điện thoại phải gồm đúng 10 chữ số!",
+                                "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                txtbMatKhau.Focus();
+                return;
+            }
+
             string query = "UPDATE NhanVien SET HoTen = @ten, SDT = @sdt, NgayVaoLam = @ngay WHERE MaNV = @id";
 
             SqlCommand cmd = new SqlCommand(query, conn);
@@ -45,7 +53,7 @@ namespace WindowsFormsApp1
             cmd.Parameters.AddWithValue("@ten", ten);
             cmd.Parameters.AddWithValue("@sdt", sdt);
             cmd.Parameters.AddWithValue("@ngay", ngay);
-            cmd.Parameters.AddWithValue("@id", NVID);   // ✅ GIỮ NGUYÊN ID
+            cmd.Parameters.AddWithValue("@id", NVID);   //GIỮ NGUYÊN ID
 
             conn.Open();
             cmd.ExecuteNonQuery();
